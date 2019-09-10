@@ -19,12 +19,12 @@ function App() {
 	const [cart, setCart] = useState([]);
 
 	const addItem = item => {
-		setCart([...cart, {...item, id: Date.now()}]);
+		setCart([...cart, {...item, dateAdded: Date.now()}]);
 	};
 
 	const removeItem = (id) => {
 		const newCart = cart.filter(item => {
-			return item.id != id
+			return item.dateAdded != id
 		})
 		setCart([...newCart ])
 	}
